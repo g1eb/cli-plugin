@@ -40,4 +40,9 @@ var cliPlugin = {
     document.removeEventListener('keydown', this.exec);
   },
 
+  destroy: function () {
+    this.removeKeyListeners();
+    this.containerElement.parentNode.removeChild(this.containerElement);
+  },
+
 };
