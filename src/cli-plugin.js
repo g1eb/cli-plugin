@@ -195,10 +195,14 @@ var cliPlugin = {
   /**
    * Pring text
    */
-  print: function(text) {
+  print: function (text) {
     var element = document.createElement('div');
     element.innerHTML = text ? text : '&#8203;';
     cliPlugin.outputElement.appendChild(element);
+  },
+
+  clear: function () {
+    cliPlugin.outputElement.innerHTML = '';
   },
 
   /**
