@@ -17,6 +17,7 @@ var cliPlugin = {
    * Initialize
    */
   init: function (config) {
+    Object.assign(cliPlugin.settings, config);
     cliPlugin.createElements();
     cliPlugin.addKeyListeners();
     cliPlugin.focusInputElement();
