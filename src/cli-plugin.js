@@ -13,6 +13,7 @@ var cliPlugin = {
 
   index: 0,
   history: [],
+  commands: {},
 
   /**
    * Initialize
@@ -122,11 +123,6 @@ var cliPlugin = {
     }, 1000);
   },
 
-  destroy: function () {
-    cliPlugin.removeKeyListeners();
-    cliPlugin.containerElement.parentNode.removeChild(cliPlugin.containerElement);
-  },
-
   moveCursorBack: function () {
     var range, selection;
     if(document.createRange) {
@@ -142,6 +138,19 @@ var cliPlugin = {
       range.collapse(false);
       range.select();
     }
+  },
+
+  bind: function (command, callback) {
+    cliPlugin.commands[command] = callback;
+  },
+
+  unbind: function (command) {
+    delete cliPlugin.commands[command];
+  },
+
+  destroy: function () {
+    cliPlugin.removeKeyListeners();
+    cliPlugin.containerElement.parentNode.removeChild(cliPlugin.containerElement);
   },
 
 };
