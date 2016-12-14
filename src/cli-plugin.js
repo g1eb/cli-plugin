@@ -12,37 +12,47 @@ var cliPlugin = {
    * Initialize
    */
   init: function (config) {
-    this.createElements();
-    this.addKeyListeners();
+    cliPlugin.createElements();
+    cliPlugin.addKeyListeners();
   },
 
   createElements: function () {
-    this.containerElement = document.createElement('div');
-    this.containerElement.setAttribute('class', 'cli-plugin');
-    document.body.appendChild(this.containerElement);
+    cliPlugin.containerElement = document.createElement('div');
+    cliPlugin.containerElement.setAttribute('class', 'cli-plugin');
+    document.body.appendChild(cliPlugin.containerElement);
 
-    this.inputElement = document.createElement('div');
-    this.inputElement.setAttribute('class', 'input active');
-    this.inputElement.setAttribute('contenteditable', 'true');
-    this.inputElement.setAttribute('tabindex', '0');
-    this.containerElement.appendChild(this.inputElement);
+    cliPlugin.inputElement = document.createElement('div');
+    cliPlugin.inputElement.setAttribute('class', 'input active');
+    cliPlugin.inputElement.setAttribute('contenteditable', 'true');
+    cliPlugin.inputElement.setAttribute('tabindex', '0');
+    cliPlugin.containerElement.appendChild(cliPlugin.inputElement);
 
-    this.outputElement = document.createElement('div');
-    this.outputElement.setAttribute('class', 'output');
-    this.containerElement.appendChild(this.outputElement);
+    cliPlugin.outputElement = document.createElement('div');
+    cliPlugin.outputElement.setAttribute('class', 'output');
+    cliPlugin.containerElement.appendChild(cliPlugin.outputElement);
   },
 
   addKeyListeners: function () {
-    document.addEventListener('keydown', this.exec, false);
+    document.addEventListener('keydown', cliPlugin.registerEvent, false);
   },
 
   removeKeyListeners: function () {
-    document.removeEventListener('keydown', this.exec);
+    document.removeEventListener('keydown', cliPlugin.registerEvent);
+  },
+
+  registerEvent: function (event) {
+    if ( event.keyCode === 13 ) {
+      cliPlugin.exec();
+    }
+  },
+
+  exec: function () {
+    var cmd = cliPlugin.inputElement.textContent.trim();
   },
 
   destroy: function () {
-    this.removeKeyListeners();
-    this.containerElement.parentNode.removeChild(this.containerElement);
+    cliPlugin.removeKeyListeners();
+    cliPlugin.containerElement.parentNode.removeChild(cliPlugin.containerElement);
   },
 
 };
