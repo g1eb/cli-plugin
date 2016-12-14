@@ -62,9 +62,11 @@ var cliPlugin = {
     } else if ( event.keyCode === 38 ) {
       event.preventDefault();
       cliPlugin.getPrevCmd();
+      cliPlugin.moveCursorBack();
     } else if ( event.keyCode === 40 ) {
       event.preventDefault();
       cliPlugin.getNextCmd();
+      cliPlugin.moveCursorBack();
     } else if ( [33, 34, 35, 36, 37, 39].indexOf(event.keyCode) > -1 ) {
       event.preventDefault();
     }
@@ -93,6 +95,23 @@ var cliPlugin = {
   destroy: function () {
     cliPlugin.removeKeyListeners();
     cliPlugin.containerElement.parentNode.removeChild(cliPlugin.containerElement);
+  },
+
+  moveCursorBack: function () {
+    var range, selection;
+    if(document.createRange) {
+      range = document.createRange();
+      range.selectNodeContents(elem[0]);
+      range.collapse(false);
+      selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    } else if(document.selection) {
+      range = document.body.createTextRange();
+      range.moveToElementText(contentEditableElement);
+      range.collapse(false);
+      range.select();
+    }
   },
 
 };
