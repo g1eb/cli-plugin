@@ -6,6 +6,8 @@
 var cliPlugin = {
 
   settings: {
+    textColor: 'rgba(15, 15, 15, 1)',
+    backgroundColor: 'rgba(245, 245, 245, 0.75)',
   },
 
   index: 0,
@@ -23,14 +25,17 @@ var cliPlugin = {
   createElements: function () {
     cliPlugin.containerElement = document.createElement('div');
     cliPlugin.containerElement.setAttribute('class', 'cli-plugin');
+    cliPlugin.containerElement.setAttribute('style', 'background:'+cliPlugin.settings.backgroundColor);
     document.body.appendChild(cliPlugin.containerElement);
 
     cliPlugin.outputElement = document.createElement('div');
     cliPlugin.outputElement.setAttribute('class', 'output');
+    cliPlugin.outputElement.setAttribute('style', 'color:'+cliPlugin.settings.textColor);
     cliPlugin.containerElement.appendChild(cliPlugin.outputElement);
 
     cliPlugin.inputElement = document.createElement('div');
     cliPlugin.inputElement.setAttribute('class', 'input');
+    cliPlugin.inputElement.setAttribute('style', 'text-shadow: 0 0 0 '+cliPlugin.settings.textColor);
     cliPlugin.inputElement.setAttribute('contenteditable', 'true');
     cliPlugin.inputElement.setAttribute('tabindex', '0');
     cliPlugin.inputElement.setAttribute('autocomplete', 'off');
