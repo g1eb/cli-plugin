@@ -86,7 +86,9 @@ var cliPlugin = {
 
   exec: function () {
     var cmd = cliPlugin.inputElement.textContent.trim();
-    cliPlugin.inputElement.innerHTML = '';
+    if ( !!cmd ) {
+      cliPlugin.inputElement.removeChild(cliPlugin.inputElement.firstChild);
+    }
     cliPlugin.history.push(cmd);
 
     var element = document.createElement('div');
