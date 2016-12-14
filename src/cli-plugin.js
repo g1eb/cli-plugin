@@ -22,7 +22,7 @@ var cliPlugin = {
     document.body.appendChild(cliPlugin.containerElement);
 
     cliPlugin.inputElement = document.createElement('div');
-    cliPlugin.inputElement.setAttribute('class', 'input active');
+    cliPlugin.inputElement.setAttribute('class', 'input');
     cliPlugin.inputElement.setAttribute('contenteditable', 'true');
     cliPlugin.inputElement.setAttribute('tabindex', '0');
     cliPlugin.containerElement.appendChild(cliPlugin.inputElement);
@@ -41,6 +41,12 @@ var cliPlugin = {
   },
 
   registerEvent: function (event) {
+    cliPlugin.inputElement.classList.add('active')
+    window.clearTimeout(cliPlugin.eventTimeoutId);
+    cliPlugin.eventTimeoutId = window.setTimeout(function () {
+      cliPlugin.inputElement.classList.remove('active')
+    }, 1000);
+
     if ( event.keyCode === 13 ) {
       cliPlugin.exec();
     }

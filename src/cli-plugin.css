@@ -95,7 +95,7 @@
   -o-animation: blink 1.5s linear 0s infinite;
   animation: blink 1.5s linear 0s infinite;
 }
-.cli-plugin.active .input::after {
+.cli-plugin .input.active::after {
   display: none;
 }
 
