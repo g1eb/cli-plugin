@@ -109,12 +109,8 @@ var cliPlugin = {
       cliPlugin.inputElement.removeChild(cliPlugin.inputElement.firstChild);
     }
     cliPlugin.history.push(cmd);
-
-    var element = document.createElement('div');
-    element.innerHTML = cmd ? cmd : '&#8203;';
-    cliPlugin.outputElement.appendChild(element);
-
     cliPlugin.index = cliPlugin.history.length;
+    cliPlugin.print(cmd);
   },
 
   /**
@@ -189,6 +185,15 @@ var cliPlugin = {
    */
   unbind: function (command) {
     delete cliPlugin.commands[command];
+  },
+
+  /**
+   * Pring text
+   */
+  print: function(text) {
+    var element = document.createElement('div');
+    element.innerHTML = text ? text : '&#8203;';
+    cliPlugin.outputElement.appendChild(element);
   },
 
   /**
