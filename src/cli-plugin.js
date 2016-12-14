@@ -108,9 +108,14 @@ var cliPlugin = {
     if ( !!cmd ) {
       cliPlugin.inputElement.removeChild(cliPlugin.inputElement.firstChild);
     }
+
     cliPlugin.history.push(cmd);
     cliPlugin.index = cliPlugin.history.length;
     cliPlugin.print(cmd);
+
+    if ( typeof cliPlugin.commands[cmd] === 'function' ) {
+      cliPlugin.commands[cmd]();
+    }
   },
 
   /**
