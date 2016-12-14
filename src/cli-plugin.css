@@ -100,41 +100,41 @@
 }
 
 @-webkit-keyframes blink {
-  0%   { background: #cccccc }
-  45%  { background: #a8a8a8 }
-  50%  { background: #111111 }
-  95%  { background: #111111 }
-  100% { background: #a8a8a8 }
+  0% { background-color: rgba(0, 0, 0, 0); }
+  45% { background-color: rgba(0, 0, 0, 0); }
+  50%  { background-color: rgb(17, 17, 17); }
+  95%  { background-color: rgb(17, 17, 17); }
+  100% { background-color: rgba(0, 0, 0, 0); }
 }
 
 @-moz-keyframes blink {
-  0%   { background: #cccccc }
-  45%  { background: #a8a8a8 }
-  50%  { background: #111111 }
-  95%  { background: #111111 }
-  100% { background: #a8a8a8 }
+  0% { background-color: rgba(0, 0, 0, 0); }
+  45% { background-color: rgba(0, 0, 0, 0); }
+  50%  { background-color: rgb(17, 17, 17); }
+  95%  { background-color: rgb(17, 17, 17); }
+  100% { background-color: rgba(0, 0, 0, 0); }
 }
 
 @-ms-keyframes blink {
-  0%   { background: #cccccc }
-  45%  { background: #a8a8a8 }
-  50%  { background: #111111 }
-  95%  { background: #111111 }
-  100% { background: #a8a8a8 }
+  0% { background-color: rgba(0, 0, 0, 0); }
+  45% { background-color: rgba(0, 0, 0, 0); }
+  50%  { background-color: rgb(17, 17, 17); }
+  95%  { background-color: rgb(17, 17, 17); }
+  100% { background-color: rgba(0, 0, 0, 0); }
 }
 
 @-o-keyframes blink {
-  0%   { background: #cccccc }
-  45%  { background: #a8a8a8 }
-  50%  { background: #111111 }
-  95%  { background: #111111 }
-  100% { background: #a8a8a8 }
+  0% { background-color: rgba(0, 0, 0, 0); }
+  45% { background-color: rgba(0, 0, 0, 0); }
+  50%  { background-color: rgb(17, 17, 17); }
+  95%  { background-color: rgb(17, 17, 17); }
+  100% { background-color: rgba(0, 0, 0, 0); }
 }
 
 @keyframes blink {
-  0%   { background: #cccccc }
-  45%  { background: #a8a8a8 }
-  50%  { background: #111111 }
-  95%  { background: #111111 }
-  100% { background: #a8a8a8 }
+  0% { background-color: rgba(0, 0, 0, 0); }
+  45% { background-color: rgba(0, 0, 0, 0); }
+  50%  { background-color: rgb(17, 17, 17); }
+  95%  { background-color: rgb(17, 17, 17); }
+  100% { background-color: rgba(0, 0, 0, 0); }
 }
