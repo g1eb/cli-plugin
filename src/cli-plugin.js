@@ -55,12 +55,6 @@ var cliPlugin = {
   },
 
   registerEvent: function (event) {
-    cliPlugin.inputElement.classList.add('active')
-    window.clearTimeout(cliPlugin.eventTimeoutId);
-    cliPlugin.eventTimeoutId = window.setTimeout(function () {
-      cliPlugin.inputElement.classList.remove('active')
-    }, 1000);
-
     if ( event.keyCode === 13 ) {
       cliPlugin.exec();
     } else if ( event.keyCode === 38 ) {
@@ -74,6 +68,7 @@ var cliPlugin = {
     } else if ( [33, 34, 35, 36, 37, 39].indexOf(event.keyCode) > -1 ) {
       event.preventDefault();
     }
+    cliPlugin.setActiveState();
   },
 
   getPrevCmd: function () {
@@ -90,6 +85,14 @@ var cliPlugin = {
       cmd = cliPlugin.history[++cliPlugin.index] || '';
     }
     cliPlugin.inputElement.innerHTML = cmd;
+  },
+
+  setActiveState: function () {
+    cliPlugin.inputElement.classList.add('active')
+    window.clearTimeout(cliPlugin.eventTimeoutId);
+    cliPlugin.eventTimeoutId = window.setTimeout(function () {
+      cliPlugin.inputElement.classList.remove('active')
+    }, 1000);
   },
 
   exec: function () {
