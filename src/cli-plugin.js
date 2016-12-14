@@ -8,6 +8,9 @@ var cliPlugin = {
   settings: {
   },
 
+  index: 0,
+  history: [],
+
   /**
    * Initialize
    */
@@ -56,7 +59,31 @@ var cliPlugin = {
 
     if ( event.keyCode === 13 ) {
       cliPlugin.exec();
+    } else if ( event.keyCode === 38 ) {
+      event.preventDefault();
+      cliPlugin.getPrevCmd();
+    } else if ( event.keyCode === 40 ) {
+      event.preventDefault();
+      cliPlugin.getNextCmd();
+    } else if ( [33, 34, 35, 36, 37, 39].indexOf(event.keyCode) > -1 ) {
+      event.preventDefault();
     }
+  },
+
+  getPrevCmd: function () {
+    var cmd = cliPlugin.index === 0 && cliPlugin.history.length > 0 ? cliPlugin.history[0] : '';
+    while ( cmd.length === 0 && cliPlugin.index > 0 ) {
+      cmd = cliPlugin.history[--cliPlugin.index];
+    }
+    cliPlugin.inputElement.innerHTML = cmd;
+  },
+
+  getNextCmd: function () {
+    var cmd = '';
+    while ( cmd.length === 0 && cliPlugin.index < cliPlugin.history.length ) {
+      cmd = cliPlugin.history[++cliPlugin.index] || '';
+    }
+    cliPlugin.inputElement.innerHTML = cmd;
   },
 
   exec: function () {
