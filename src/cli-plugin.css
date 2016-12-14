@@ -12,7 +12,7 @@
   overflow: hidden;
   z-index: 9999;
 
-  color: #cccccc;
+  color: #111111;
   font-family: monospace;
   font-size: 12px;
   line-height: 14px;
@@ -35,8 +35,8 @@
   color: transparent;
   text-shadow: 0 0 0 #cccccc;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 10px;
+  left: 8px;
   padding-right: 10px;
   height: 14px;
 }
@@ -52,8 +52,8 @@
 .cli-plugin .output {
   position: absolute;
   right: 0;
-  bottom: 14px;
-  left: 0;
+  bottom: 24px;
+  left: 8px;
   padding-left: 2px;
 }
 .cli-plugin .output a {
