@@ -29,6 +29,10 @@ var cliPlugin = {
     cliPlugin.inputElement.setAttribute('class', 'input');
     cliPlugin.inputElement.setAttribute('contenteditable', 'true');
     cliPlugin.inputElement.setAttribute('tabindex', '0');
+    cliPlugin.inputElement.setAttribute('autocomplete', 'off');
+    cliPlugin.inputElement.setAttribute('autocorrect', 'off');
+    cliPlugin.inputElement.setAttribute('autocapitalize', 'off');
+    cliPlugin.inputElement.setAttribute('spellcheck', 'false');
     cliPlugin.containerElement.appendChild(cliPlugin.inputElement);
 
     cliPlugin.outputElement = document.createElement('div');
