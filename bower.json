@@ -1,0 +1,32 @@
+{
+  "name": "cli-plugin",
+  "version": "0.0.1",
+  "description": "Command line interface plugin for web applications.",
+  "homepage": "https://github.com/g1eb/cli-plugin#readme",
+  "authors": [
+    "G1eb <mail@g1eb.com>"
+  ],
+  "license": "MIT",
+  "main": [
+    "dist/cli-plugin.min.js",
+    "dist/cli-plugin.min.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "keywords": [
+    "cli",
+    "interface",
+    "commands",
+    "plugin",
+    "web",
+    "shell",
+    "console",
+    "terminal"
+  ]
+}
