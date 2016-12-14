@@ -14,6 +14,7 @@ var cliPlugin = {
   init: function (config) {
     cliPlugin.createElements();
     cliPlugin.addKeyListeners();
+    cliPlugin.focusInputElement();
   },
 
   createElements: function () {
@@ -32,12 +33,18 @@ var cliPlugin = {
     cliPlugin.containerElement.appendChild(cliPlugin.outputElement);
   },
 
+  focusInputElement: function () {
+    cliPlugin.inputElement.focus();
+  },
+
   addKeyListeners: function () {
     document.addEventListener('keydown', cliPlugin.registerEvent, false);
+    cliPlugin.inputElement.addEventListener('blur', cliPlugin.focusInputElement, false);
   },
 
   removeKeyListeners: function () {
     document.removeEventListener('keydown', cliPlugin.registerEvent);
+    cliPlugin.inputElement.removeEventListener('blur', cliPlugin.focusInputElement);
   },
 
   registerEvent: function (event) {
