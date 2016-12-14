@@ -6,8 +6,9 @@
 var cliPlugin = {
 
   settings: {
-    textColor: 'rgba(15, 15, 15, 1)',
-    backgroundColor: 'rgba(245, 245, 245, 0.75)',
+    textColor: 'rgba(245, 245, 245, 1)',
+    cursorColor: 'rgba(245, 245, 245, 0.75)',
+    backgroundColor: 'rgba(51, 51, 51, 0.75)',
   },
 
   index: 0,
@@ -44,6 +45,11 @@ var cliPlugin = {
     cliPlugin.inputElement.setAttribute('autocapitalize', 'off');
     cliPlugin.inputElement.setAttribute('spellcheck', 'false');
     cliPlugin.containerElement.appendChild(cliPlugin.inputElement);
+
+    cliPlugin.cursorElement = document.createElement('div');
+    cliPlugin.cursorElement.setAttribute('class', 'cursor');
+    cliPlugin.cursorElement.setAttribute('style', 'background:'+cliPlugin.settings.cursorColor);
+    cliPlugin.inputElement.appendChild(cliPlugin.cursorElement);
   },
 
   focusInputElement: function () {

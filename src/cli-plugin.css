@@ -82,60 +82,46 @@
 /**
  * Blinking cursor
  */
-.cli-plugin .input::after {
+.cli-plugin .input .cursor {
   content: "";
   position: absolute;
   width: 8px;
   top: 0;
   right: 0;
   bottom: 0;
+  background-color: black;
 
-  -webkit-animation: blink 1.5s linear 0s infinite;
-  -moz-animation: blink 1.5s linear 0s infinite;
-  -ms-animation: blink 1.5s linear 0s infinite;
-  -o-animation: blink 1.5s linear 0s infinite;
-  animation: blink 1.5s linear 0s infinite;
+  -webkit-animation: blink 1.5s ease-in-out 0s infinite;
+  -moz-animation: blink 1.5s ease-in-out 0s infinite;
+  -ms-animation: blink 1.5s ease-in-out 0s infinite;
+  -o-animation: blink 1.5s ease-in-out 0s infinite;
+  animation: blink 1.5s ease-in-out 0s infinite;
 }
-.cli-plugin .input.active::after {
+.cli-plugin .input.active .cursor {
   display: none;
 }
 
 @-webkit-keyframes blink {
-  0% { background-color: rgba(0, 0, 0, 0); }
-  45% { background-color: rgba(0, 0, 0, 0); }
-  50%  { background-color: rgb(17, 17, 17); }
-  95%  { background-color: rgb(17, 17, 17); }
-  100% { background-color: rgba(0, 0, 0, 0); }
+  40%  { background-color: transparent; }
+  60%  { background-color: transparent; }
 }
 
 @-moz-keyframes blink {
-  0% { background-color: rgba(0, 0, 0, 0); }
-  45% { background-color: rgba(0, 0, 0, 0); }
-  50%  { background-color: rgb(17, 17, 17); }
-  95%  { background-color: rgb(17, 17, 17); }
-  100% { background-color: rgba(0, 0, 0, 0); }
+  40%  { background-color: transparent; }
+  60%  { background-color: transparent; }
 }
 
 @-ms-keyframes blink {
-  0% { background-color: rgba(0, 0, 0, 0); }
-  45% { background-color: rgba(0, 0, 0, 0); }
-  50%  { background-color: rgb(17, 17, 17); }
-  95%  { background-color: rgb(17, 17, 17); }
-  100% { background-color: rgba(0, 0, 0, 0); }
+  40%  { background-color: transparent; }
+  60%  { background-color: transparent; }
 }
 
 @-o-keyframes blink {
-  0% { background-color: rgba(0, 0, 0, 0); }
-  45% { background-color: rgba(0, 0, 0, 0); }
-  50%  { background-color: rgb(17, 17, 17); }
-  95%  { background-color: rgb(17, 17, 17); }
-  100% { background-color: rgba(0, 0, 0, 0); }
+  40%  { background-color: transparent; }
+  60%  { background-color: transparent; }
 }
 
 @keyframes blink {
-  0% { background-color: rgba(0, 0, 0, 0); }
-  45% { background-color: rgba(0, 0, 0, 0); }
-  50%  { background-color: rgb(17, 17, 17); }
-  95%  { background-color: rgb(17, 17, 17); }
-  100% { background-color: rgba(0, 0, 0, 0); }
+  40%  { background-color: transparent; }
+  60%  { background-color: transparent; }
 }
