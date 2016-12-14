@@ -13,6 +13,7 @@ var cliPlugin = {
    */
   init: function (config) {
     this.createElements();
+    this.addKeyListeners();
   },
 
   createElements: function () {
@@ -31,5 +32,12 @@ var cliPlugin = {
     this.containerElement.appendChild(this.outputElement);
   },
 
+  addKeyListeners: function () {
+    document.addEventListener('keydown', this.exec, false);
+  },
+
+  removeKeyListeners: function () {
+    document.removeEventListener('keydown', this.exec);
+  },
 
 };
