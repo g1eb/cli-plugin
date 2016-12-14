@@ -117,7 +117,7 @@ var cliPlugin = {
     var range, selection;
     if(document.createRange) {
       range = document.createRange();
-      range.selectNodeContents(elem[0]);
+      range.selectNodeContents(cliPlugin.inputElement);
       range.collapse(false);
       selection = window.getSelection();
       selection.removeAllRanges();
