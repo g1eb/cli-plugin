@@ -33,7 +33,7 @@
 .cli-plugin .input {
   cursor: none;
   color: transparent;
-  text-shadow: 0 0 0 #cccccc;
+  text-shadow: 0 0 0 #111111;
   position: absolute;
   bottom: 10px;
   left: 8px;
