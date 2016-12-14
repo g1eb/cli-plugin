@@ -1,6 +1,140 @@
 /**
  * CLI PLugin styles
  */
-
 .cli-plugin {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  bottom: 50px;
+  min-width: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  z-index: 9999;
+
+  color: #cccccc;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/**
+ * Input
+ */
+.cli-plugin .input {
+  cursor: none;
+  color: transparent;
+  text-shadow: 0 0 0 #cccccc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-right: 10px;
+  height: 14px;
+}
+.cli-plugin .input:focus {
+  border: none;
+  outline: none;
+}
+
+
+/**
+ * Output
+ */
+.cli-plugin .output {
+  position: absolute;
+  right: 0;
+  bottom: 14px;
+  left: 0;
+  padding-left: 2px;
+}
+.cli-plugin .output a {
+  color: #cccccc;
+  text-decoration: none;
+}
+.cli-plugin .output a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.cli-plugin .output p {
+  max-width: 500px;
+}
+.cli-plugin .output ul {
+  list-style-type: none;
+  padding-left: 25px;
+}
+.cli-plugin .output ul li span {
+  display: inline-block;
+  min-width: 100px;
+  text-align: left;
+}
+
+
+/**
+ * Blinking cursor
+ */
+.cli-plugin .input::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  -webkit-animation: blink 1.5s linear 0s infinite;
+  -moz-animation: blink 1.5s linear 0s infinite;
+  -ms-animation: blink 1.5s linear 0s infinite;
+  -o-animation: blink 1.5s linear 0s infinite;
+  animation: blink 1.5s linear 0s infinite;
+}
+.cli-plugin.active .input::after {
+  display: none;
+}
+
+@-webkit-keyframes blink {
+  0%   { background: #cccccc }
+  45%  { background: #a8a8a8 }
+  50%  { background: #111111 }
+  95%  { background: #111111 }
+  100% { background: #a8a8a8 }
+}
+
+@-moz-keyframes blink {
+  0%   { background: #cccccc }
+  45%  { background: #a8a8a8 }
+  50%  { background: #111111 }
+  95%  { background: #111111 }
+  100% { background: #a8a8a8 }
+}
+
+@-ms-keyframes blink {
+  0%   { background: #cccccc }
+  45%  { background: #a8a8a8 }
+  50%  { background: #111111 }
+  95%  { background: #111111 }
+  100% { background: #a8a8a8 }
+}
+
+@-o-keyframes blink {
+  0%   { background: #cccccc }
+  45%  { background: #a8a8a8 }
+  50%  { background: #111111 }
+  95%  { background: #111111 }
+  100% { background: #a8a8a8 }
+}
+
+@keyframes blink {
+  0%   { background: #cccccc }
+  45%  { background: #a8a8a8 }
+  50%  { background: #111111 }
+  95%  { background: #111111 }
+  100% { background: #a8a8a8 }
 }
