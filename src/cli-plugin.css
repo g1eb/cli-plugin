@@ -8,7 +8,7 @@
   left: 50px;
   bottom: 50px;
   min-width: 500px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background: whitesmoke;
   overflow: hidden;
   z-index: 9999;
 
@@ -39,7 +39,7 @@
   padding-left: 2px;
 }
 .cli-plugin .output a {
-  color: #cccccc;
+  color: #111111;
   text-decoration: none;
 }
 .cli-plugin .output a:hover {
