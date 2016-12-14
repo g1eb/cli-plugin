@@ -28,26 +28,7 @@
 }
 
 /**
- * Input
- */
-.cli-plugin .input {
-  cursor: none;
-  color: transparent;
-  text-shadow: 0 0 0 #111111;
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  padding-right: 10px;
-  height: 14px;
-}
-.cli-plugin .input:focus {
-  border: none;
-  outline: none;
-}
-
-
-/**
- * Output
+ * Output element
  */
 .cli-plugin .output {
   position: absolute;
@@ -76,6 +57,25 @@
   display: inline-block;
   min-width: 100px;
   text-align: left;
+}
+
+
+/**
+ * Input element
+ */
+.cli-plugin .input {
+  cursor: none;
+  color: transparent;
+  text-shadow: 0 0 0 #111111;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  padding-right: 10px;
+  height: 14px;
+}
+.cli-plugin .input:focus {
+  border: none;
+  outline: none;
 }
 
 

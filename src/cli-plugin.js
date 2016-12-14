@@ -25,6 +25,10 @@ var cliPlugin = {
     cliPlugin.containerElement.setAttribute('class', 'cli-plugin');
     document.body.appendChild(cliPlugin.containerElement);
 
+    cliPlugin.outputElement = document.createElement('div');
+    cliPlugin.outputElement.setAttribute('class', 'output');
+    cliPlugin.containerElement.appendChild(cliPlugin.outputElement);
+
     cliPlugin.inputElement = document.createElement('div');
     cliPlugin.inputElement.setAttribute('class', 'input');
     cliPlugin.inputElement.setAttribute('contenteditable', 'true');
@@ -34,10 +38,6 @@ var cliPlugin = {
     cliPlugin.inputElement.setAttribute('autocapitalize', 'off');
     cliPlugin.inputElement.setAttribute('spellcheck', 'false');
     cliPlugin.containerElement.appendChild(cliPlugin.inputElement);
-
-    cliPlugin.outputElement = document.createElement('div');
-    cliPlugin.outputElement.setAttribute('class', 'output');
-    cliPlugin.containerElement.appendChild(cliPlugin.outputElement);
   },
 
   focusInputElement: function () {
