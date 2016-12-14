@@ -5,26 +5,36 @@
  */
 var cliPlugin = {
 
+  /**
+   * Vars
+   */
+  index: 0,
+  history: [],
+  commands: {},
+
+  /**
+   * Default settings
+   */
   settings: {
     textColor: 'rgba(245, 245, 245, 1)',
     cursorColor: 'rgba(245, 245, 245, 0.75)',
     backgroundColor: 'rgba(51, 51, 51, 0.75)',
   },
 
-  index: 0,
-  history: [],
-  commands: {},
-
   /**
    * Initialize
    */
   init: function (config) {
     Object.assign(cliPlugin.settings, config);
+
     cliPlugin.createElements();
     cliPlugin.addKeyListeners();
     cliPlugin.focusInputElement();
   },
 
+  /**
+   * Create required elements
+   */
   createElements: function () {
     cliPlugin.containerElement = document.createElement('div');
     cliPlugin.containerElement.setAttribute('class', 'cli-plugin');
@@ -53,20 +63,25 @@ var cliPlugin = {
     cliPlugin.inputElement.appendChild(cliPlugin.cursorElement);
   },
 
-  focusInputElement: function () {
-    cliPlugin.inputElement.focus();
-  },
-
+  /**
+   * Add key bindings and event listeners
+   */
   addKeyListeners: function () {
     document.addEventListener('keydown', cliPlugin.registerEvent, false);
     cliPlugin.inputElement.addEventListener('blur', cliPlugin.focusInputElement, false);
   },
 
+  /**
+   * Remove key bindings and event listeners
+   */
   removeKeyListeners: function () {
     document.removeEventListener('keydown', cliPlugin.registerEvent);
     cliPlugin.inputElement.removeEventListener('blur', cliPlugin.focusInputElement);
   },
 
+  /**
+   * Dispatcher function for various events
+   */
   registerEvent: function (event) {
     if ( event.keyCode === 13 ) {
       event.preventDefault();
@@ -85,6 +100,9 @@ var cliPlugin = {
     cliPlugin.setActiveState();
   },
 
+  /**
+   * Execute a comand (on enter)
+   */
   exec: function () {
     var cmd = cliPlugin.inputElement.textContent.trim();
     if ( !!cmd ) {
@@ -99,6 +117,9 @@ var cliPlugin = {
     cliPlugin.index = cliPlugin.history.length;
   },
 
+  /**
+   * Go back in history to show the previous command
+   */
   getPrevCmd: function () {
     var cmd = cliPlugin.index === 0 && cliPlugin.history.length > 0 ? cliPlugin.history[0] : '';
     while ( cmd.length === 0 && cliPlugin.index > 0 ) {
@@ -107,6 +128,9 @@ var cliPlugin = {
     cliPlugin.inputElement.innerHTML = cmd;
   },
 
+  /**
+   * Go forward in history to show the next command
+   */
   getNextCmd: function () {
     var cmd = '';
     while ( cmd.length === 0 && cliPlugin.index < cliPlugin.history.length ) {
@@ -115,6 +139,16 @@ var cliPlugin = {
     cliPlugin.inputElement.innerHTML = cmd;
   },
 
+  /**
+   * Set focus on input element
+   */
+  focusInputElement: function () {
+    cliPlugin.inputElement.focus();
+  },
+
+  /**
+   * Set active state on input (while typing)
+   */
   setActiveState: function () {
     cliPlugin.inputElement.classList.add('active')
     window.clearTimeout(cliPlugin.eventTimeoutId);
@@ -123,6 +157,9 @@ var cliPlugin = {
     }, 1000);
   },
 
+  /**
+   * Move cursor to end of line
+   */
   moveCursorBack: function () {
     var range, selection;
     if(document.createRange) {
@@ -140,14 +177,23 @@ var cliPlugin = {
     }
   },
 
+  /**
+   * Register a specific command with callback
+   */
   bind: function (command, callback) {
     cliPlugin.commands[command] = callback;
   },
 
+  /**
+   * Unregister a specific command
+   */
   unbind: function (command) {
     delete cliPlugin.commands[command];
   },
 
+  /**
+   * Remove all key bindings and elements
+   */
   destroy: function () {
     cliPlugin.removeKeyListeners();
     cliPlugin.containerElement.parentNode.removeChild(cliPlugin.containerElement);
