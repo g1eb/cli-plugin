@@ -57,6 +57,13 @@ var cliPlugin = {
     cliPlugin.inputElement.setAttribute('spellcheck', 'false');
     cliPlugin.containerElement.appendChild(cliPlugin.inputElement);
 
+    cliPlugin.addCursor();
+  },
+
+  /**
+   * Add blinking cursor to input element
+   */
+  addCursor: function () {
     cliPlugin.cursorElement = document.createElement('div');
     cliPlugin.cursorElement.setAttribute('class', 'cursor');
     cliPlugin.cursorElement.setAttribute('style', 'background:'+cliPlugin.settings.cursorColor);
@@ -127,6 +134,7 @@ var cliPlugin = {
       cmd = cliPlugin.history[--cliPlugin.index];
     }
     cliPlugin.inputElement.innerHTML = cmd;
+    cliPlugin.addCursor();
   },
 
   /**
@@ -138,6 +146,7 @@ var cliPlugin = {
       cmd = cliPlugin.history[++cliPlugin.index] || '';
     }
     cliPlugin.inputElement.innerHTML = cmd;
+    cliPlugin.addCursor();
   },
 
   /**
