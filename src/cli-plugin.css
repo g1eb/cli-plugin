@@ -89,39 +89,60 @@
   top: 0;
   right: 0;
   bottom: 0;
+  opacity: 1;
   background-color: black;
 
-  -webkit-animation: blink 1.5s ease-in-out 0s infinite;
-  -moz-animation: blink 1.5s ease-in-out 0s infinite;
-  -ms-animation: blink 1.5s ease-in-out 0s infinite;
-  -o-animation: blink 1.5s ease-in-out 0s infinite;
-  animation: blink 1.5s ease-in-out 0s infinite;
+  -webkit-animation: blink 1.5s linear 0s infinite;
+  -moz-animation: blink 1.5s linear 0s infinite;
+  -ms-animation: blink 1.5s linear 0s infinite;
+  -o-animation: blink 1.5s linear 0s infinite;
+  animation: blink 1.5s linear 0s infinite;
 }
 .cli-plugin .input.active .cursor {
   display: none;
 }
 
 @-webkit-keyframes blink {
-  40%  { background-color: transparent; }
-  60%  { background-color: transparent; }
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  35% { opacity: 1; }
+  65% { opacity: 1; }
+  70% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @-moz-keyframes blink {
-  40%  { background-color: transparent; }
-  60%  { background-color: transparent; }
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  35% { opacity: 1; }
+  65% { opacity: 1; }
+  70% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @-ms-keyframes blink {
-  40%  { background-color: transparent; }
-  60%  { background-color: transparent; }
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  35% { opacity: 1; }
+  65% { opacity: 1; }
+  70% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @-o-keyframes blink {
-  40%  { background-color: transparent; }
-  60%  { background-color: transparent; }
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  35% { opacity: 1; }
+  65% { opacity: 1; }
+  70% { opacity: 0; }
+  100% { opacity: 0; }
 }
 
 @keyframes blink {
-  40%  { background-color: transparent; }
-  60%  { background-color: transparent; }
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  35% { opacity: 1; }
+  65% { opacity: 1; }
+  70% { opacity: 0; }
+  100% { opacity: 0; }
 }
