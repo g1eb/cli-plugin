@@ -3,7 +3,7 @@
  */
 .cli-plugin {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 50px;
   left: 50px;
   bottom: 50px;
