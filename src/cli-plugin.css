@@ -27,6 +27,7 @@
   user-select: none;
 }
 
+
 /**
  * Output element
  */
@@ -39,7 +40,7 @@
   padding-left: 2px;
 }
 .cli-plugin .output a {
-  color: #111111;
+  color: inherit;
   text-decoration: none;
 }
 .cli-plugin .output a:hover {
