@@ -1,11 +1,11 @@
 {
   "name": "cli-plugin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Command line interface plugin for web applications.",
   "homepage": "https://github.com/g1eb/cli-plugin#readme",
   "author": "g1eb",
   "license": "MIT",
-  "main": "index.html",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/g1eb/cli-plugin.git"
