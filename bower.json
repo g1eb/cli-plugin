@@ -1,6 +1,6 @@
 {
   "name": "cli-plugin",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Command line interface plugin for web applications.",
   "homepage": "https://github.com/g1eb/cli-plugin#readme",
   "authors": [
