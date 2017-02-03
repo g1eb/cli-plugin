@@ -1,12 +1,14 @@
 # CLI Plugin
-CLI plugin is a simple and easy to use CLI for web applications.  
+This project is a simple and easy to use command-line interface (CLI) for web applications.  
 
-This is project originated from my fascination with minimalistic user interfaces.  
-While rich in functionality - a good CLI is never distracting.  
+Inspired by minimalistic user interfaces that are rich in functionality.  
+Designed for simplicity and built to empower.  
+Very light weight.  
 
 Features:
-- keeps history of used commands
+- configurable commands
 - configurable colorschemes
+- keeps history of used commands
 
 ## Demo
 Click <a href="https://rawgit.com/g1eb/cli-plugin/master/" target="_blank">here</a> for a live demo.
