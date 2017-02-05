@@ -154,6 +154,7 @@ var cliPlugin = {
    */
   focusInputElement: function () {
     cliPlugin.inputElement.focus();
+    cliPlugin.inputElement.focus();
   },
 
   /**
