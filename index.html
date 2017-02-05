@@ -9,33 +9,25 @@
   <meta name="theme-color" content="#111111">
   <meta name="msapplication-navbutton-color" content="#111111">
   <meta name="apple-mobile-web-app-status-bar-style" content="#111111">
-  <style>
-    body {
-      background: #111;
-    }
-  </style>
 </head>
 <body>
   <script src="dist/cli-plugin.min.js"></script>
   <script>
     (function () {
 
-
       /**
        * Set your preffered colors for the cli
        */
       var config = {
-        textColor: '#111111',
-        cursorColor: '#111111',
-        backgroundColor: 'rgba(245, 245, 245, 0.75)',
+        textColor: 'whitesmoke',
+        cursorColor: 'whitesmoke',
+        backgroundColor: 'black',
       };
-
 
       /**
        * Initialize cli plugin
        */
       cliPlugin.init(config);
-
 
       /**
        * Register your commands

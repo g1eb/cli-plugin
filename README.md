@@ -13,6 +13,8 @@ Features:
 ## Demo
 Click <a href="https://rawgit.com/g1eb/cli-plugin/master/" target="_blank">here</a> for a live demo.
 
+[<img src="https://raw.githubusercontent.com/g1eb/cli-plugin/master/img/cli-plugin.png" alt="CLI Plugin">](https://rawgit.com/g1eb/cli-plugin/master/)
+
 ## Install
 
 - Install 'cli-plugin' with bower
