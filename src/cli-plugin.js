@@ -153,8 +153,9 @@ var cliPlugin = {
    * Set focus on input element
    */
   focusInputElement: function () {
-    cliPlugin.inputElement.focus();
-    cliPlugin.inputElement.focus();
+    window.setTimeout(function () {
+      cliPlugin.inputElement.focus();
+    });
   },
 
   /**
